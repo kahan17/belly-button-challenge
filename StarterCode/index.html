@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+
+  <!-- Bootstrap 4/5 for improved design -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Optional custom CSS -->
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+    h1 {
+      color: #17a2b8;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .panel-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .card, .panel {
+      margin-bottom: 20px;
+    }
+    #bubble, #bar, #gauge {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #sample-metadata p {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    /* Ensure bar chart renders with enough space */
+    #bar {
+      height: 400px;
+      width: 100%;
+    }
+    #bubble {
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center py-4">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p class="lead">Use the interactive charts below to explore the dataset.</p>
+      </div>
+    </div>
+
+    <!-- Dropdown and Metadata Section -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Test Subject ID No.:</h5>
+            <select id="selDataset" class="custom-select" onchange="optionChanged(this.value)">
+            </select>
+          </div>
+        </div>
+
+        <div class="card mt-3">
+          <div class="card-header bg-primary text-white">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="card-body"></div>
+        </div>
+      </div>
+
+      <!-- Bar Chart (now taking more space) -->
+      <div class="col-md-7">
+        <div id="bar"></div>
+      </div>
+
+      <!-- Gauge Chart -->
+      <div class="col-md-2">
+        <div id="gauge"></div>
+      </div>
+    </div>
+
+    <!-- Bubble Chart Section -->
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D3.js and Plotly.js for charts -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- Link to the app.js script -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
